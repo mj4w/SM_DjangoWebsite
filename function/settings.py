@@ -15,8 +15,8 @@ from pathlib import Path
 
 from pathlib import Path
 import os
-import django_heroku
-import dj_database_url
+#import django_heroku
+#import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-43kv5q-3oe2=k0z=%g!_-u*5deirsco88lmzds&b%!%-r2@-yj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['meetonline-cli.herokuapp.com','127.0.0.1:8000']
+ALLOWED_HOSTS = []
 
 
 
@@ -44,10 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web.apps.WebConfig',
-    'crispy_forms',
-    'django_social_share',
-    'django_heroku',
-    'dj_database_url',
+
+
 
 
 
@@ -95,16 +93,11 @@ WSGI_APPLICATION = 'function.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd22025c17ua2eu',
-        'HOST':'ec2-3-219-229-143.compute-1.amazonaws.com',
-        'PORT':5432,
-        'USER':'bqrhvstlrcfzwk',
-        'PASSWORD':'e3bca8bd1bb7bc99987a24b458078a2a4e477539ddd3c8d1b06b0397097e14e0'
-
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -182,6 +175,3 @@ EMAIL_PORT = '2525'
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
-
-
-django_heroku.settings(locals())

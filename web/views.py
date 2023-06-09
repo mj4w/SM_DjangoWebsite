@@ -9,7 +9,7 @@ from webbrowser import get
 from xml.dom.expatbuilder import theDOMImplementation
 from django.dispatch import receiver
 
-from flask import request_started
+
 from .forms import  ImageForm, MessageForm, NewUserForm, ThreadForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
