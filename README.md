@@ -1,5 +1,5 @@
 # SM_DjangoWebsite
-Social Media Website build in Django 
+Social Media Website built in Django 
 
 ## Installation 
 
